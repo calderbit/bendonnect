@@ -175,9 +175,17 @@ def build.go(kind: P.CallKind, procedure: String, codec: P.Codec, t: Maybe<&2, U
     case P.Stream{}:
       stream_decoded(procedure, codec, headers, t, Env.decode_all(body, msg_max()))
 
+# Only JSON and Protobuf are served: the spec answers any other codec with 415.
+def build.codec(+codec: P.Codec, kind: P.CallKind, procedure: String, t: Maybe<&2, U32>, message: Bytes.Bytes, headers: Map<&2, List<&2, String>>, body: Bytes.Bytes) -> Pre:
+  match codec:
+    case P.Custom{name}:
+      reject_pre(P.Status{415, "unsupported codec \"" ++ name ++ "\": supported codecs are json and proto"}, False{}, P.Json{})
+    case _:
+      build.go(kind, procedure, codec, t, message, headers, body)
+
 def build(spec: P.Spec, headers: Map<&2, List<&2, String>>, body: Bytes.Bytes) -> Pre:
   P.Spec{procedure, kind, codec, timeout_ms, encoding, accept, message} = spec
-  build.go(kind, procedure, codec, timeout_ms, message, headers, body)
+  build.codec(codec, kind, procedure, timeout_ms, message, headers, body)
 
 def pre.go(r: Result<&2, &1, P.Reject, P.Spec>, headers: Map<&2, List<&2, String>>, body: Bytes.Bytes, ct: P.Ct) -> Pre:
   match r:

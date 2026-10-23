@@ -1,0 +1,7 @@
+version: v2
+clean: false
+plugins:
+  - local: ../../../../cmd/protoc-gen-bend/bin/protoc-gen-bend
+    out: gen
+    opt:
+      - runtime=../../..

@@ -4,8 +4,8 @@ Bendonette is a ConnectRPC (https://connectrpc.com/docs/protocol/) library for B
 
 ## Setup
 - `export PATH="$HOME/.bend/bin:$PATH"` (Bend 2.0.38). Read `~/.bend/guide/GUIDE.md` fully before writing Bend.
-- Native builds (`bend f.bend -o f`) need clang; use the zig shim:
-  `export PATH=/tmp/claude-1000/-home-calderbit-dev-Bendonette/af17a737-1765-4d6a-97d6-1c3fc107a611/scratchpad/bin:$PATH`.
+- Native builds (`bend f.bend -o f`) need clang 14+. Without clang, put a `clang` script on PATH that
+  runs `exec zig cc "$@"` and answers `--version` with `clang version 20.1.0` (tests/run_all.sh does this).
 - `bend base [Name]` prints Base. Fetched hub packages are cached in `~/.bend/lib/<hash>/` (read their source there).
 
 ## Dependencies (pinned)
@@ -22,7 +22,7 @@ import bend-kit-http@0.36.0.0/http.bend as Http          # TRANSPORT ONLY (uses 
   `bend src/<file>.bend` must print ALL PROOFS CHECK.
 - `src/transport/*.bend` server and client IO on bend-kit-http (may be unsafe).
 - `tests/*_test.bend`: runnable tests; `main` returns a List of results or IO that prints PASS/FAIL lines.
-- `LAWS.bend` and `PROOF.bend` at the root are owned by the lead. Put proposed laws in (create the dir)
+- `LAWS.bend` and `PROOF.bend` at the root are owned by the maintainer. Put proposed laws in (create the dir)
   `proofs/<area>_laws.bend` and their proofs in `proofs/<area>_proof.bend` (same convention:
   `law x` proven by `def Laws.x` in the proof file, which imports the laws file `as Laws`).
 - Idioms learned so far:

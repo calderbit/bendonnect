@@ -1,0 +1,3 @@
+syntax = "proto2";
+package bad.v1;
+message M { optional int32 x = 1; }

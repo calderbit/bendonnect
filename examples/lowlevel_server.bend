@@ -1,5 +1,5 @@
 # A small JSON-only Connect service: unary Greet and server-streaming GreetMany.
-#   bend examples/greet_server.bend
+#   bend examples/lowlevel_server.bend
 #   curl -s localhost:8787/greet.v1.GreetService/Greet -H 'Content-Type: application/json' -d '{"name":"Ada"}'
 #   -> {"greeting":"Hello, Ada!"}
 import Base

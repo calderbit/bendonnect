@@ -1,0 +1,13 @@
+version: v2
+clean: false
+plugins:
+  # Bend (the plugin under test; built to ../../cmd/protoc-gen-bend/bin/protoc-gen-bend by run.sh)
+  - local: ../../cmd/protoc-gen-bend/bin/protoc-gen-bend
+    out: gen/bend
+    opt:
+      - runtime=../../../..
+  # Go reference (for golden vectors)
+  - local: protoc-gen-go
+    out: gen/go
+    opt:
+      - paths=source_relative

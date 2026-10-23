@@ -47,7 +47,7 @@ Server (src/transport/server.bend), alias `Srv`:
     Single{result: Result<&1, &1, E.Error, Bytes>, meta: Meta}   -- unary, or client-stream single response
     Many{run: Sink -> IO(Sink & Result<&1, &1, E.Error, Unit>), meta: Meta}   -- server stream
     NoRoute{}                                                         -- unknown procedure: HTTP 404
-  serve(~handle: Call -> IO(Reply), host: String, +port: U32, prefix: String) -> IO(Unit)
+  serve(~handle: Call -> IO(Reply), ~prefix: String, host: String, +port: U32) -> IO(Unit)   (templates first)
   helpers: ok(msg) -> Reply ; fail(code, message) -> Reply ; meta.empty()
 Client (src/transport/client.bend), alias `Cli`:
   type Response is Type: Response{headers: Map, trailers: Map, messages: List<&1, Bytes>}

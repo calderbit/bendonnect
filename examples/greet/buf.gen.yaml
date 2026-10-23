@@ -1,0 +1,17 @@
+version: v2
+clean: false
+plugins:
+  # Bend: greet.pb.bend (pure messages + codecs) and greet.connect.bend (server and client stubs)
+  - local: ../../cmd/protoc-gen-bend/bin/protoc-gen-bend
+    out: .
+    opt:
+      - runtime=../..
+  # Go: a connect-go client used by run_e2e.sh to call the Bend server
+  - local: protoc-gen-go
+    out: goclient/greetv1
+    opt:
+      - paths=source_relative
+  - local: protoc-gen-connect-go
+    out: goclient/greetv1
+    opt:
+      - paths=source_relative

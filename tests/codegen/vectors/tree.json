@@ -1,0 +1,1 @@
+{"name":"root","weight":3,"left":{"name":"l","weight":-1,"left":{"name":"ll"}},"right":{},"children":[{"name":"c1"},{"name":"c2","children":[{"weight":2}]}]}

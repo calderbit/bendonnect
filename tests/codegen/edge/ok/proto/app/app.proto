@@ -1,0 +1,42 @@
+syntax = "proto3";
+package app.v1;
+
+import "shared/common.proto";
+
+// Empty message, keyword-named messages and fields, cross-file references, an
+// self-recursive message through a oneof.
+message Empty {}
+
+message Kind {
+  string match = 1;
+  string def = 2;
+}
+
+message Event {
+  shared.v1.Stamp at = 1;
+  shared.v1.Level level = 2;
+  repeated shared.v1.Stamp history = 3;
+  map<string, shared.v1.Stamp> marks = 4;
+  Empty nothing = 5;
+  Kind kind = 6;
+}
+
+message Expr {
+  oneof node {
+    int32 literal = 1;
+    string name = 2;
+    Binary binary = 3;
+    Expr negated = 4;
+  }
+  message Binary {
+    string op = 1;
+    int32 weight = 2;
+  }
+}
+
+service Eval {
+  rpc Run(Expr) returns (Event);
+  rpc Watch(Empty) returns (stream Event);
+  rpc Push(stream Expr) returns (Event);
+  rpc Chat(stream Expr) returns (stream Event);
+}

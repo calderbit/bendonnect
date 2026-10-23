@@ -40,7 +40,9 @@ type tcase struct {
 
 var cases []tcase
 
-func add(name string, fn func(context.Context) error) { cases = append(cases, tcase{name: name, fn: fn}) }
+func add(name string, fn func(context.Context) error) {
+	cases = append(cases, tcase{name: name, fn: fn})
+}
 func addSpec(name string, fn func(context.Context) error) {
 	cases = append(cases, tcase{name: name, spec: true, fn: fn})
 }
@@ -221,6 +223,13 @@ func init() {
 	})
 	add("raw/wrong-content-type-415", func(ctx context.Context) error {
 		r, err := raw(ctx, "POST", svc+"Echo", "text/plain", `"x"`, nil)
+		if err != nil {
+			return err
+		}
+		return wantStatus(r, 415)
+	})
+	add("raw/unknown-codec-415", func(ctx context.Context) error {
+		r, err := raw(ctx, "POST", svc+"Echo", "application/xml", `<x/>`, nil)
 		if err != nil {
 			return err
 		}

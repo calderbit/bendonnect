@@ -64,7 +64,7 @@ def req_headers(headers: Map<&2, List<&2, String>>, ct: String) -> Map<&2, List<
   Http.set(Http.set(headers, "content-type", ct), "connect-protocol-version", "1")
 
 def ct_ok(+headers: Map<&2, List<&2, String>>, expect: String) -> Bool:
-  String.eq(P.media(Http.header(headers, "content-type")), expect)
+  String.eq(String.to_lower(String.trim(P.media(Http.header(headers, "content-type")))), expect)
 
 # ------------------------------------------------------------------ unary
 

@@ -1,6 +1,3 @@
-# native builds
-examples/*
-!examples/*.bend
-spike/server
+# native builds and their GPU programs (build into build/ or a temp dir)
+build/
 *.gpu
-*.c.tmp

@@ -1,5 +1,5 @@
-# Calls examples/greet_server.bend (run it first): JSON unary, then a server stream.
-#   bend examples/greet_client.bend
+# Calls examples/lowlevel_server.bend (run it first): JSON unary, then a server stream.
+#   bend examples/lowlevel_client.bend
 import Base
 import bend-kit-http@0.36.0.0/http.bend as Http
 import bend-kit-bytes@0.3.2.0/bytes.bend as Bytes

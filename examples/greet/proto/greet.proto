@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package greet.v1;
+
+option go_package = "bendonette/greet/goclient/greetv1;greetv1";
+
+message GreetRequest {
+  string name = 1;
+}
+
+message GreetResponse {
+  string greeting = 1;
+}
+
+service GreetService {
+  // Unary. Safe to retry and to call with HTTP GET.
+  rpc Greet(GreetRequest) returns (GreetResponse) {
+    option idempotency_level = NO_SIDE_EFFECTS;
+  }
+  // The server streams three greetings back.
+  rpc GreetMany(GreetRequest) returns (stream GreetResponse) {}
+  // The client streams names; the server answers with one greeting for all.
+  rpc GreetAll(stream GreetRequest) returns (GreetResponse) {}
+}

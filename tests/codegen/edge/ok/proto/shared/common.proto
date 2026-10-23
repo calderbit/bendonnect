@@ -1,0 +1,13 @@
+syntax = "proto3";
+package shared.v1;
+
+enum Level {
+  LEVEL_UNSPECIFIED = 0;
+  LEVEL_HIGH = 1;
+  LEVEL_LOW = -1;
+}
+
+message Stamp {
+  int64 seconds = 1;
+  Level level = 2;
+}
