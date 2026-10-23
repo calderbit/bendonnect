@@ -1,0 +1,6 @@
+# native builds
+examples/*
+!examples/*.bend
+spike/server
+*.gpu
+*.c.tmp
