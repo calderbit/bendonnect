@@ -1,14 +1,14 @@
-# Bendonette Go interop harness
+# Bendonnect Go interop harness
 
-Tests a Bendonette (Bend) Connect server against connect-go. No codegen: messages are
-`wrapperspb` well-known types on service `bendonette.test.v1.TestService`.
+Tests a Bendonnect (Bend) Connect server against connect-go. No codegen: messages are
+`wrapperspb` well-known types on service `bendonnect.test.v1.TestService`.
 
 ## Run
 
     cd tests/interop
     go run ./server -addr 127.0.0.1:8788          # reference server (connect-go, HTTP/1.1 + h2c)
     go run ./client -url http://127.0.0.1:8788    # self-test against the reference
-    go run ./client -url http://127.0.0.1:8787    # target (Bendonette)
+    go run ./client -url http://127.0.0.1:8787    # target (Bendonnect)
     go run ./client -url ... -run fail/not_found -v   # filter + verbose dumps
     go run ./client -url ... -lenient             # skip [spec] cases (none currently)
     URL=http://127.0.0.1:8787 ./curl_smoke.sh

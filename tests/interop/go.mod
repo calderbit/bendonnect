@@ -1,4 +1,4 @@
-module bendonette/interop
+module bendonnect/interop
 
 go 1.27.2
 

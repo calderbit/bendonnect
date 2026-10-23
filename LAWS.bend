@@ -1,4 +1,4 @@
-# The laws of Bendonette: facts about the Connect protocol implementation that
+# The laws of Bendonnect: facts about the Connect protocol implementation that
 # must always hold. Each is proven in PROOF.bend; `bend PROOF.bend` is the gate.
 import Base
 import ./src/code.bend as Code

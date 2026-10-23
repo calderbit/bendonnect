@@ -5,7 +5,7 @@
 package greetv1connect
 
 import (
-	greetv1 "bendonette/greet/goclient/greetv1"
+	greetv1 "bendonnect/greet/goclient/greetv1"
 	connect "connectrpc.com/connect"
 	context "context"
 	errors "errors"

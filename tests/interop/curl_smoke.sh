@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Smoke-test a Connect server with curl. Usage: URL=http://127.0.0.1:8787 ./curl_smoke.sh
 URL="${URL:-http://127.0.0.1:8787}"
-P=/bendonette.test.v1.TestService
+P=/bendonnect.test.v1.TestService
 set -x
 # unary JSON echo
 curl -si "$URL$P/Echo" -H 'Content-Type: application/json' -H 'Connect-Protocol-Version: 1' -H 'x-test: hi' -d '"hello"'

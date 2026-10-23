@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package bendonette.codegen.v1;
+package bendonnect.codegen.v1;
 
-option go_package = "bendonette/codegen/gen/go;kitchenv1";
+option go_package = "bendonnect/codegen/gen/go;kitchenv1";
 
 // Every scalar kind, plus repeated, nested, recursive, map, oneof, optional
 // and keyword-named fields.

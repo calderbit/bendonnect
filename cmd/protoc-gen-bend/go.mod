@@ -1,4 +1,4 @@
-module bendonette/protoc-gen-bend
+module github.com/calderbit/bendonnect/cmd/protoc-gen-bend
 
 go 1.27.2
 

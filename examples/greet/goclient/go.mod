@@ -1,4 +1,4 @@
-module bendonette/greet/goclient
+module bendonnect/greet/goclient
 
 go 1.27.2
 

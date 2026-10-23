@@ -16,7 +16,7 @@ import (
 	"sort"
 	"strings"
 
-	kitchenv1 "bendonette/codegen/gen/go"
+	kitchenv1 "bendonnect/codegen/gen/go"
 
 	"google.golang.org/protobuf/encoding/protojson"
 	"google.golang.org/protobuf/proto"

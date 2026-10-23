@@ -11,7 +11,7 @@ import ../src/protocol.bend as P
 import ../src/transport/client.bend as Cli
 
 def svc() -> String:
-  "bendonette.test.v1.TestService/"
+  "bendonnect.test.v1.TestService/"
 
 def chr(n: U32) -> String:
   SCon{Chr{n}, SNil{}}

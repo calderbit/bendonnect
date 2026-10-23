@@ -289,7 +289,7 @@ type Repeats struct {
 	Longs         []int64                `protobuf:"varint,5,rep,packed,name=longs,proto3" json:"longs,omitempty"`
 	Doubles       []float64              `protobuf:"fixed64,6,rep,packed,name=doubles,proto3" json:"doubles,omitempty"`
 	Flags         []bool                 `protobuf:"varint,7,rep,packed,name=flags,proto3" json:"flags,omitempty"`
-	Colors        []Color                `protobuf:"varint,8,rep,packed,name=colors,proto3,enum=bendonette.codegen.v1.Color" json:"colors,omitempty"`
+	Colors        []Color                `protobuf:"varint,8,rep,packed,name=colors,proto3,enum=bendonnect.codegen.v1.Color" json:"colors,omitempty"`
 	Items         []*Scalars             `protobuf:"bytes,9,rep,name=items,proto3" json:"items,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -391,8 +391,8 @@ func (x *Repeats) GetItems() []*Scalars {
 type Outer struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Inner         *Outer_Inner           `protobuf:"bytes,1,opt,name=inner,proto3" json:"inner,omitempty"`
-	Kind          Outer_Kind             `protobuf:"varint,2,opt,name=kind,proto3,enum=bendonette.codegen.v1.Outer_Kind" json:"kind,omitempty"`
-	Color         Color                  `protobuf:"varint,3,opt,name=color,proto3,enum=bendonette.codegen.v1.Color" json:"color,omitempty"`
+	Kind          Outer_Kind             `protobuf:"varint,2,opt,name=kind,proto3,enum=bendonnect.codegen.v1.Outer_Kind" json:"kind,omitempty"`
+	Color         Color                  `protobuf:"varint,3,opt,name=color,proto3,enum=bendonnect.codegen.v1.Color" json:"color,omitempty"`
 	Inners        []*Outer_Inner         `protobuf:"bytes,4,rep,name=inners,proto3" json:"inners,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -540,7 +540,7 @@ type Maps struct {
 	Labels        map[string]string      `protobuf:"bytes,3,rep,name=labels,proto3" json:"labels,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	Flags         map[bool]string        `protobuf:"bytes,4,rep,name=flags,proto3" json:"flags,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	Blobs         map[uint64][]byte      `protobuf:"bytes,5,rep,name=blobs,proto3" json:"blobs,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	Colors        map[int64]Color        `protobuf:"bytes,6,rep,name=colors,proto3" json:"colors,omitempty" protobuf_key:"zigzag64,1,opt,name=key" protobuf_val:"varint,2,opt,name=value,enum=bendonette.codegen.v1.Color"`
+	Colors        map[int64]Color        `protobuf:"bytes,6,rep,name=colors,proto3" json:"colors,omitempty" protobuf_key:"zigzag64,1,opt,name=key" protobuf_val:"varint,2,opt,name=value,enum=bendonnect.codegen.v1.Color"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -738,7 +738,7 @@ type Choice_Scalars struct {
 }
 
 type Choice_Color struct {
-	Color Color `protobuf:"varint,5,opt,name=color,proto3,enum=bendonette.codegen.v1.Color,oneof"`
+	Color Color `protobuf:"varint,5,opt,name=color,proto3,enum=bendonnect.codegen.v1.Color,oneof"`
 }
 
 type Choice_Raw struct {
@@ -760,7 +760,7 @@ type Optionals struct {
 	MaybeInt      *int32                 `protobuf:"varint,1,opt,name=maybe_int,json=maybeInt,proto3,oneof" json:"maybe_int,omitempty"`
 	MaybeString   *string                `protobuf:"bytes,2,opt,name=maybe_string,json=maybeString,proto3,oneof" json:"maybe_string,omitempty"`
 	MaybeBool     *bool                  `protobuf:"varint,3,opt,name=maybe_bool,json=maybeBool,proto3,oneof" json:"maybe_bool,omitempty"`
-	MaybeColor    *Color                 `protobuf:"varint,4,opt,name=maybe_color,json=maybeColor,proto3,enum=bendonette.codegen.v1.Color,oneof" json:"maybe_color,omitempty"`
+	MaybeColor    *Color                 `protobuf:"varint,4,opt,name=maybe_color,json=maybeColor,proto3,enum=bendonnect.codegen.v1.Color,oneof" json:"maybe_color,omitempty"`
 	MaybeLong     *int64                 `protobuf:"varint,5,opt,name=maybe_long,json=maybeLong,proto3,oneof" json:"maybe_long,omitempty"`
 	Plain         int32                  `protobuf:"varint,6,opt,name=plain,proto3" json:"plain,omitempty"`
 	MaybeMsg      *Scalars               `protobuf:"bytes,7,opt,name=maybe_msg,json=maybeMsg,proto3,oneof" json:"maybe_msg,omitempty"`
@@ -872,7 +872,7 @@ type Keywords struct {
 	Import        string                 `protobuf:"bytes,4,opt,name=import,proto3" json:"import,omitempty"`
 	For           uint32                 `protobuf:"varint,5,opt,name=for,proto3" json:"for,omitempty"`
 	Data          string                 `protobuf:"bytes,6,opt,name=data,proto3" json:"data,omitempty"`
-	Kind          Color                  `protobuf:"varint,7,opt,name=kind,proto3,enum=bendonette.codegen.v1.Color" json:"kind,omitempty"`
+	Kind          Color                  `protobuf:"varint,7,opt,name=kind,proto3,enum=bendonnect.codegen.v1.Color" json:"kind,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1060,7 +1060,7 @@ func (x *Kitchen) GetKeywords() *Keywords {
 type Outer_Inner struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Label         string                 `protobuf:"bytes,1,opt,name=label,proto3" json:"label,omitempty"`
-	Kind          Outer_Kind             `protobuf:"varint,2,opt,name=kind,proto3,enum=bendonette.codegen.v1.Outer_Kind" json:"kind,omitempty"`
+	Kind          Outer_Kind             `protobuf:"varint,2,opt,name=kind,proto3,enum=bendonnect.codegen.v1.Outer_Kind" json:"kind,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1113,7 +1113,7 @@ var File_kitchen_proto protoreflect.FileDescriptor
 
 const file_kitchen_proto_rawDesc = "" +
 	"\n" +
-	"\rkitchen.proto\x12\x15bendonette.codegen.v1\"\x9e\x03\n" +
+	"\rkitchen.proto\x12\x15bendonnect.codegen.v1\"\x9e\x03\n" +
 	"\aScalars\x12\x19\n" +
 	"\bf_double\x18\x01 \x01(\x01R\afDouble\x12\x17\n" +
 	"\af_float\x18\x02 \x01(\x02R\x06fFloat\x12\x17\n" +
@@ -1142,16 +1142,16 @@ const file_kitchen_proto_rawDesc = "" +
 	"\x05longs\x18\x05 \x03(\x03R\x05longs\x12\x18\n" +
 	"\adoubles\x18\x06 \x03(\x01R\adoubles\x12\x14\n" +
 	"\x05flags\x18\a \x03(\bR\x05flags\x124\n" +
-	"\x06colors\x18\b \x03(\x0e2\x1c.bendonette.codegen.v1.ColorR\x06colors\x124\n" +
-	"\x05items\x18\t \x03(\v2\x1e.bendonette.codegen.v1.ScalarsR\x05items\"\xfb\x02\n" +
+	"\x06colors\x18\b \x03(\x0e2\x1c.bendonnect.codegen.v1.ColorR\x06colors\x124\n" +
+	"\x05items\x18\t \x03(\v2\x1e.bendonnect.codegen.v1.ScalarsR\x05items\"\xfb\x02\n" +
 	"\x05Outer\x128\n" +
-	"\x05inner\x18\x01 \x01(\v2\".bendonette.codegen.v1.Outer.InnerR\x05inner\x125\n" +
-	"\x04kind\x18\x02 \x01(\x0e2!.bendonette.codegen.v1.Outer.KindR\x04kind\x122\n" +
-	"\x05color\x18\x03 \x01(\x0e2\x1c.bendonette.codegen.v1.ColorR\x05color\x12:\n" +
-	"\x06inners\x18\x04 \x03(\v2\".bendonette.codegen.v1.Outer.InnerR\x06inners\x1aT\n" +
+	"\x05inner\x18\x01 \x01(\v2\".bendonnect.codegen.v1.Outer.InnerR\x05inner\x125\n" +
+	"\x04kind\x18\x02 \x01(\x0e2!.bendonnect.codegen.v1.Outer.KindR\x04kind\x122\n" +
+	"\x05color\x18\x03 \x01(\x0e2\x1c.bendonnect.codegen.v1.ColorR\x05color\x12:\n" +
+	"\x06inners\x18\x04 \x03(\v2\".bendonnect.codegen.v1.Outer.InnerR\x06inners\x1aT\n" +
 	"\x05Inner\x12\x14\n" +
 	"\x05label\x18\x01 \x01(\tR\x05label\x125\n" +
-	"\x04kind\x18\x02 \x01(\x0e2!.bendonette.codegen.v1.Outer.KindR\x04kind\";\n" +
+	"\x04kind\x18\x02 \x01(\x0e2!.bendonnect.codegen.v1.Outer.KindR\x04kind\";\n" +
 	"\x04Kind\x12\x14\n" +
 	"\x10KIND_UNSPECIFIED\x10\x00\x12\x0e\n" +
 	"\n" +
@@ -1160,22 +1160,22 @@ const file_kitchen_proto_rawDesc = "" +
 	"\x04Tree\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x16\n" +
 	"\x06weight\x18\x02 \x01(\x05R\x06weight\x12/\n" +
-	"\x04left\x18\x03 \x01(\v2\x1b.bendonette.codegen.v1.TreeR\x04left\x121\n" +
-	"\x05right\x18\x04 \x01(\v2\x1b.bendonette.codegen.v1.TreeR\x05right\x127\n" +
-	"\bchildren\x18\x05 \x03(\v2\x1b.bendonette.codegen.v1.TreeR\bchildren\"\x9d\x06\n" +
+	"\x04left\x18\x03 \x01(\v2\x1b.bendonnect.codegen.v1.TreeR\x04left\x121\n" +
+	"\x05right\x18\x04 \x01(\v2\x1b.bendonnect.codegen.v1.TreeR\x05right\x127\n" +
+	"\bchildren\x18\x05 \x03(\v2\x1b.bendonnect.codegen.v1.TreeR\bchildren\"\x9d\x06\n" +
 	"\x04Maps\x12?\n" +
-	"\x06counts\x18\x01 \x03(\v2'.bendonette.codegen.v1.Maps.CountsEntryR\x06counts\x12:\n" +
-	"\x05by_id\x18\x02 \x03(\v2%.bendonette.codegen.v1.Maps.ByIdEntryR\x04byId\x12?\n" +
-	"\x06labels\x18\x03 \x03(\v2'.bendonette.codegen.v1.Maps.LabelsEntryR\x06labels\x12<\n" +
-	"\x05flags\x18\x04 \x03(\v2&.bendonette.codegen.v1.Maps.FlagsEntryR\x05flags\x12<\n" +
-	"\x05blobs\x18\x05 \x03(\v2&.bendonette.codegen.v1.Maps.BlobsEntryR\x05blobs\x12?\n" +
-	"\x06colors\x18\x06 \x03(\v2'.bendonette.codegen.v1.Maps.ColorsEntryR\x06colors\x1a9\n" +
+	"\x06counts\x18\x01 \x03(\v2'.bendonnect.codegen.v1.Maps.CountsEntryR\x06counts\x12:\n" +
+	"\x05by_id\x18\x02 \x03(\v2%.bendonnect.codegen.v1.Maps.ByIdEntryR\x04byId\x12?\n" +
+	"\x06labels\x18\x03 \x03(\v2'.bendonnect.codegen.v1.Maps.LabelsEntryR\x06labels\x12<\n" +
+	"\x05flags\x18\x04 \x03(\v2&.bendonnect.codegen.v1.Maps.FlagsEntryR\x05flags\x12<\n" +
+	"\x05blobs\x18\x05 \x03(\v2&.bendonnect.codegen.v1.Maps.BlobsEntryR\x05blobs\x12?\n" +
+	"\x06colors\x18\x06 \x03(\v2'.bendonnect.codegen.v1.Maps.ColorsEntryR\x06colors\x1a9\n" +
 	"\vCountsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\x03R\x05value:\x028\x01\x1aW\n" +
 	"\tByIdEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\x05R\x03key\x124\n" +
-	"\x05value\x18\x02 \x01(\v2\x1e.bendonette.codegen.v1.ScalarsR\x05value:\x028\x01\x1a9\n" +
+	"\x05value\x18\x02 \x01(\v2\x1e.bendonnect.codegen.v1.ScalarsR\x05value:\x028\x01\x1a9\n" +
 	"\vLabelsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\x1a8\n" +
@@ -1189,13 +1189,13 @@ const file_kitchen_proto_rawDesc = "" +
 	"\x05value\x18\x02 \x01(\fR\x05value:\x028\x01\x1aW\n" +
 	"\vColorsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\x12R\x03key\x122\n" +
-	"\x05value\x18\x02 \x01(\x0e2\x1c.bendonette.codegen.v1.ColorR\x05value:\x028\x01\"\xd9\x01\n" +
+	"\x05value\x18\x02 \x01(\x0e2\x1c.bendonnect.codegen.v1.ColorR\x05value:\x028\x01\"\xd9\x01\n" +
 	"\x06Choice\x12\x10\n" +
 	"\x03tag\x18\x01 \x01(\tR\x03tag\x12\x18\n" +
 	"\x06number\x18\x02 \x01(\x05H\x00R\x06number\x12\x14\n" +
 	"\x04text\x18\x03 \x01(\tH\x00R\x04text\x12:\n" +
-	"\ascalars\x18\x04 \x01(\v2\x1e.bendonette.codegen.v1.ScalarsH\x00R\ascalars\x124\n" +
-	"\x05color\x18\x05 \x01(\x0e2\x1c.bendonette.codegen.v1.ColorH\x00R\x05color\x12\x12\n" +
+	"\ascalars\x18\x04 \x01(\v2\x1e.bendonnect.codegen.v1.ScalarsH\x00R\ascalars\x124\n" +
+	"\x05color\x18\x05 \x01(\x0e2\x1c.bendonnect.codegen.v1.ColorH\x00R\x05color\x12\x12\n" +
 	"\x03raw\x18\x06 \x01(\fH\x00R\x03rawB\a\n" +
 	"\x05value\"\x83\x04\n" +
 	"\tOptionals\x12 \n" +
@@ -1203,12 +1203,12 @@ const file_kitchen_proto_rawDesc = "" +
 	"\fmaybe_string\x18\x02 \x01(\tH\x01R\vmaybeString\x88\x01\x01\x12\"\n" +
 	"\n" +
 	"maybe_bool\x18\x03 \x01(\bH\x02R\tmaybeBool\x88\x01\x01\x12B\n" +
-	"\vmaybe_color\x18\x04 \x01(\x0e2\x1c.bendonette.codegen.v1.ColorH\x03R\n" +
+	"\vmaybe_color\x18\x04 \x01(\x0e2\x1c.bendonnect.codegen.v1.ColorH\x03R\n" +
 	"maybeColor\x88\x01\x01\x12\"\n" +
 	"\n" +
 	"maybe_long\x18\x05 \x01(\x03H\x04R\tmaybeLong\x88\x01\x01\x12\x14\n" +
 	"\x05plain\x18\x06 \x01(\x05R\x05plain\x12@\n" +
-	"\tmaybe_msg\x18\a \x01(\v2\x1e.bendonette.codegen.v1.ScalarsH\x05R\bmaybeMsg\x88\x01\x01\x12$\n" +
+	"\tmaybe_msg\x18\a \x01(\v2\x1e.bendonnect.codegen.v1.ScalarsH\x05R\bmaybeMsg\x88\x01\x01\x12$\n" +
 	"\vmaybe_bytes\x18\b \x01(\fH\x06R\n" +
 	"maybeBytes\x88\x01\x01\x12&\n" +
 	"\fmaybe_double\x18\t \x01(\x01H\aR\vmaybeDouble\x88\x01\x01B\f\n" +
@@ -1229,22 +1229,22 @@ const file_kitchen_proto_rawDesc = "" +
 	"\x06import\x18\x04 \x01(\tR\x06import\x12\x10\n" +
 	"\x03for\x18\x05 \x01(\rR\x03for\x12\x12\n" +
 	"\x04data\x18\x06 \x01(\tR\x04data\x120\n" +
-	"\x04kind\x18\a \x01(\x0e2\x1c.bendonette.codegen.v1.ColorR\x04kind\"\xc7\x03\n" +
+	"\x04kind\x18\a \x01(\x0e2\x1c.bendonnect.codegen.v1.ColorR\x04kind\"\xc7\x03\n" +
 	"\aKitchen\x128\n" +
-	"\ascalars\x18\x01 \x01(\v2\x1e.bendonette.codegen.v1.ScalarsR\ascalars\x128\n" +
-	"\arepeats\x18\x02 \x01(\v2\x1e.bendonette.codegen.v1.RepeatsR\arepeats\x122\n" +
-	"\x05outer\x18\x03 \x01(\v2\x1c.bendonette.codegen.v1.OuterR\x05outer\x12/\n" +
-	"\x04tree\x18\x04 \x01(\v2\x1b.bendonette.codegen.v1.TreeR\x04tree\x12/\n" +
-	"\x04maps\x18\x05 \x01(\v2\x1b.bendonette.codegen.v1.MapsR\x04maps\x125\n" +
-	"\x06choice\x18\x06 \x01(\v2\x1d.bendonette.codegen.v1.ChoiceR\x06choice\x12>\n" +
-	"\toptionals\x18\a \x01(\v2 .bendonette.codegen.v1.OptionalsR\toptionals\x12;\n" +
-	"\bkeywords\x18\b \x01(\v2\x1f.bendonette.codegen.v1.KeywordsR\bkeywords*N\n" +
+	"\ascalars\x18\x01 \x01(\v2\x1e.bendonnect.codegen.v1.ScalarsR\ascalars\x128\n" +
+	"\arepeats\x18\x02 \x01(\v2\x1e.bendonnect.codegen.v1.RepeatsR\arepeats\x122\n" +
+	"\x05outer\x18\x03 \x01(\v2\x1c.bendonnect.codegen.v1.OuterR\x05outer\x12/\n" +
+	"\x04tree\x18\x04 \x01(\v2\x1b.bendonnect.codegen.v1.TreeR\x04tree\x12/\n" +
+	"\x04maps\x18\x05 \x01(\v2\x1b.bendonnect.codegen.v1.MapsR\x04maps\x125\n" +
+	"\x06choice\x18\x06 \x01(\v2\x1d.bendonnect.codegen.v1.ChoiceR\x06choice\x12>\n" +
+	"\toptionals\x18\a \x01(\v2 .bendonnect.codegen.v1.OptionalsR\toptionals\x12;\n" +
+	"\bkeywords\x18\b \x01(\v2\x1f.bendonnect.codegen.v1.KeywordsR\bkeywords*N\n" +
 	"\x05Color\x12\x15\n" +
 	"\x11COLOR_UNSPECIFIED\x10\x00\x12\r\n" +
 	"\tCOLOR_RED\x10\x01\x12\x0f\n" +
 	"\vCOLOR_GREEN\x10\x02\x12\x0e\n" +
 	"\n" +
-	"COLOR_BLUE\x10\x03B%Z#bendonette/codegen/gen/go;kitchenv1b\x06proto3"
+	"COLOR_BLUE\x10\x03B%Z#bendonnect/codegen/gen/go;kitchenv1b\x06proto3"
 
 var (
 	file_kitchen_proto_rawDescOnce sync.Once
@@ -1261,57 +1261,57 @@ func file_kitchen_proto_rawDescGZIP() []byte {
 var file_kitchen_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_kitchen_proto_msgTypes = make([]protoimpl.MessageInfo, 16)
 var file_kitchen_proto_goTypes = []any{
-	(Color)(0),          // 0: bendonette.codegen.v1.Color
-	(Outer_Kind)(0),     // 1: bendonette.codegen.v1.Outer.Kind
-	(*Scalars)(nil),     // 2: bendonette.codegen.v1.Scalars
-	(*Repeats)(nil),     // 3: bendonette.codegen.v1.Repeats
-	(*Outer)(nil),       // 4: bendonette.codegen.v1.Outer
-	(*Tree)(nil),        // 5: bendonette.codegen.v1.Tree
-	(*Maps)(nil),        // 6: bendonette.codegen.v1.Maps
-	(*Choice)(nil),      // 7: bendonette.codegen.v1.Choice
-	(*Optionals)(nil),   // 8: bendonette.codegen.v1.Optionals
-	(*Keywords)(nil),    // 9: bendonette.codegen.v1.Keywords
-	(*Kitchen)(nil),     // 10: bendonette.codegen.v1.Kitchen
-	(*Outer_Inner)(nil), // 11: bendonette.codegen.v1.Outer.Inner
-	nil,                 // 12: bendonette.codegen.v1.Maps.CountsEntry
-	nil,                 // 13: bendonette.codegen.v1.Maps.ByIdEntry
-	nil,                 // 14: bendonette.codegen.v1.Maps.LabelsEntry
-	nil,                 // 15: bendonette.codegen.v1.Maps.FlagsEntry
-	nil,                 // 16: bendonette.codegen.v1.Maps.BlobsEntry
-	nil,                 // 17: bendonette.codegen.v1.Maps.ColorsEntry
+	(Color)(0),          // 0: bendonnect.codegen.v1.Color
+	(Outer_Kind)(0),     // 1: bendonnect.codegen.v1.Outer.Kind
+	(*Scalars)(nil),     // 2: bendonnect.codegen.v1.Scalars
+	(*Repeats)(nil),     // 3: bendonnect.codegen.v1.Repeats
+	(*Outer)(nil),       // 4: bendonnect.codegen.v1.Outer
+	(*Tree)(nil),        // 5: bendonnect.codegen.v1.Tree
+	(*Maps)(nil),        // 6: bendonnect.codegen.v1.Maps
+	(*Choice)(nil),      // 7: bendonnect.codegen.v1.Choice
+	(*Optionals)(nil),   // 8: bendonnect.codegen.v1.Optionals
+	(*Keywords)(nil),    // 9: bendonnect.codegen.v1.Keywords
+	(*Kitchen)(nil),     // 10: bendonnect.codegen.v1.Kitchen
+	(*Outer_Inner)(nil), // 11: bendonnect.codegen.v1.Outer.Inner
+	nil,                 // 12: bendonnect.codegen.v1.Maps.CountsEntry
+	nil,                 // 13: bendonnect.codegen.v1.Maps.ByIdEntry
+	nil,                 // 14: bendonnect.codegen.v1.Maps.LabelsEntry
+	nil,                 // 15: bendonnect.codegen.v1.Maps.FlagsEntry
+	nil,                 // 16: bendonnect.codegen.v1.Maps.BlobsEntry
+	nil,                 // 17: bendonnect.codegen.v1.Maps.ColorsEntry
 }
 var file_kitchen_proto_depIdxs = []int32{
-	0,  // 0: bendonette.codegen.v1.Repeats.colors:type_name -> bendonette.codegen.v1.Color
-	2,  // 1: bendonette.codegen.v1.Repeats.items:type_name -> bendonette.codegen.v1.Scalars
-	11, // 2: bendonette.codegen.v1.Outer.inner:type_name -> bendonette.codegen.v1.Outer.Inner
-	1,  // 3: bendonette.codegen.v1.Outer.kind:type_name -> bendonette.codegen.v1.Outer.Kind
-	0,  // 4: bendonette.codegen.v1.Outer.color:type_name -> bendonette.codegen.v1.Color
-	11, // 5: bendonette.codegen.v1.Outer.inners:type_name -> bendonette.codegen.v1.Outer.Inner
-	5,  // 6: bendonette.codegen.v1.Tree.left:type_name -> bendonette.codegen.v1.Tree
-	5,  // 7: bendonette.codegen.v1.Tree.right:type_name -> bendonette.codegen.v1.Tree
-	5,  // 8: bendonette.codegen.v1.Tree.children:type_name -> bendonette.codegen.v1.Tree
-	12, // 9: bendonette.codegen.v1.Maps.counts:type_name -> bendonette.codegen.v1.Maps.CountsEntry
-	13, // 10: bendonette.codegen.v1.Maps.by_id:type_name -> bendonette.codegen.v1.Maps.ByIdEntry
-	14, // 11: bendonette.codegen.v1.Maps.labels:type_name -> bendonette.codegen.v1.Maps.LabelsEntry
-	15, // 12: bendonette.codegen.v1.Maps.flags:type_name -> bendonette.codegen.v1.Maps.FlagsEntry
-	16, // 13: bendonette.codegen.v1.Maps.blobs:type_name -> bendonette.codegen.v1.Maps.BlobsEntry
-	17, // 14: bendonette.codegen.v1.Maps.colors:type_name -> bendonette.codegen.v1.Maps.ColorsEntry
-	2,  // 15: bendonette.codegen.v1.Choice.scalars:type_name -> bendonette.codegen.v1.Scalars
-	0,  // 16: bendonette.codegen.v1.Choice.color:type_name -> bendonette.codegen.v1.Color
-	0,  // 17: bendonette.codegen.v1.Optionals.maybe_color:type_name -> bendonette.codegen.v1.Color
-	2,  // 18: bendonette.codegen.v1.Optionals.maybe_msg:type_name -> bendonette.codegen.v1.Scalars
-	0,  // 19: bendonette.codegen.v1.Keywords.kind:type_name -> bendonette.codegen.v1.Color
-	2,  // 20: bendonette.codegen.v1.Kitchen.scalars:type_name -> bendonette.codegen.v1.Scalars
-	3,  // 21: bendonette.codegen.v1.Kitchen.repeats:type_name -> bendonette.codegen.v1.Repeats
-	4,  // 22: bendonette.codegen.v1.Kitchen.outer:type_name -> bendonette.codegen.v1.Outer
-	5,  // 23: bendonette.codegen.v1.Kitchen.tree:type_name -> bendonette.codegen.v1.Tree
-	6,  // 24: bendonette.codegen.v1.Kitchen.maps:type_name -> bendonette.codegen.v1.Maps
-	7,  // 25: bendonette.codegen.v1.Kitchen.choice:type_name -> bendonette.codegen.v1.Choice
-	8,  // 26: bendonette.codegen.v1.Kitchen.optionals:type_name -> bendonette.codegen.v1.Optionals
-	9,  // 27: bendonette.codegen.v1.Kitchen.keywords:type_name -> bendonette.codegen.v1.Keywords
-	1,  // 28: bendonette.codegen.v1.Outer.Inner.kind:type_name -> bendonette.codegen.v1.Outer.Kind
-	2,  // 29: bendonette.codegen.v1.Maps.ByIdEntry.value:type_name -> bendonette.codegen.v1.Scalars
-	0,  // 30: bendonette.codegen.v1.Maps.ColorsEntry.value:type_name -> bendonette.codegen.v1.Color
+	0,  // 0: bendonnect.codegen.v1.Repeats.colors:type_name -> bendonnect.codegen.v1.Color
+	2,  // 1: bendonnect.codegen.v1.Repeats.items:type_name -> bendonnect.codegen.v1.Scalars
+	11, // 2: bendonnect.codegen.v1.Outer.inner:type_name -> bendonnect.codegen.v1.Outer.Inner
+	1,  // 3: bendonnect.codegen.v1.Outer.kind:type_name -> bendonnect.codegen.v1.Outer.Kind
+	0,  // 4: bendonnect.codegen.v1.Outer.color:type_name -> bendonnect.codegen.v1.Color
+	11, // 5: bendonnect.codegen.v1.Outer.inners:type_name -> bendonnect.codegen.v1.Outer.Inner
+	5,  // 6: bendonnect.codegen.v1.Tree.left:type_name -> bendonnect.codegen.v1.Tree
+	5,  // 7: bendonnect.codegen.v1.Tree.right:type_name -> bendonnect.codegen.v1.Tree
+	5,  // 8: bendonnect.codegen.v1.Tree.children:type_name -> bendonnect.codegen.v1.Tree
+	12, // 9: bendonnect.codegen.v1.Maps.counts:type_name -> bendonnect.codegen.v1.Maps.CountsEntry
+	13, // 10: bendonnect.codegen.v1.Maps.by_id:type_name -> bendonnect.codegen.v1.Maps.ByIdEntry
+	14, // 11: bendonnect.codegen.v1.Maps.labels:type_name -> bendonnect.codegen.v1.Maps.LabelsEntry
+	15, // 12: bendonnect.codegen.v1.Maps.flags:type_name -> bendonnect.codegen.v1.Maps.FlagsEntry
+	16, // 13: bendonnect.codegen.v1.Maps.blobs:type_name -> bendonnect.codegen.v1.Maps.BlobsEntry
+	17, // 14: bendonnect.codegen.v1.Maps.colors:type_name -> bendonnect.codegen.v1.Maps.ColorsEntry
+	2,  // 15: bendonnect.codegen.v1.Choice.scalars:type_name -> bendonnect.codegen.v1.Scalars
+	0,  // 16: bendonnect.codegen.v1.Choice.color:type_name -> bendonnect.codegen.v1.Color
+	0,  // 17: bendonnect.codegen.v1.Optionals.maybe_color:type_name -> bendonnect.codegen.v1.Color
+	2,  // 18: bendonnect.codegen.v1.Optionals.maybe_msg:type_name -> bendonnect.codegen.v1.Scalars
+	0,  // 19: bendonnect.codegen.v1.Keywords.kind:type_name -> bendonnect.codegen.v1.Color
+	2,  // 20: bendonnect.codegen.v1.Kitchen.scalars:type_name -> bendonnect.codegen.v1.Scalars
+	3,  // 21: bendonnect.codegen.v1.Kitchen.repeats:type_name -> bendonnect.codegen.v1.Repeats
+	4,  // 22: bendonnect.codegen.v1.Kitchen.outer:type_name -> bendonnect.codegen.v1.Outer
+	5,  // 23: bendonnect.codegen.v1.Kitchen.tree:type_name -> bendonnect.codegen.v1.Tree
+	6,  // 24: bendonnect.codegen.v1.Kitchen.maps:type_name -> bendonnect.codegen.v1.Maps
+	7,  // 25: bendonnect.codegen.v1.Kitchen.choice:type_name -> bendonnect.codegen.v1.Choice
+	8,  // 26: bendonnect.codegen.v1.Kitchen.optionals:type_name -> bendonnect.codegen.v1.Optionals
+	9,  // 27: bendonnect.codegen.v1.Kitchen.keywords:type_name -> bendonnect.codegen.v1.Keywords
+	1,  // 28: bendonnect.codegen.v1.Outer.Inner.kind:type_name -> bendonnect.codegen.v1.Outer.Kind
+	2,  // 29: bendonnect.codegen.v1.Maps.ByIdEntry.value:type_name -> bendonnect.codegen.v1.Scalars
+	0,  // 30: bendonnect.codegen.v1.Maps.ColorsEntry.value:type_name -> bendonnect.codegen.v1.Color
 	31, // [31:31] is the sub-list for method output_type
 	31, // [31:31] is the sub-list for method input_type
 	31, // [31:31] is the sub-list for extension type_name

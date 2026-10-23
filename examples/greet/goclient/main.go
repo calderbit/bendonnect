@@ -15,8 +15,8 @@ import (
 	"strings"
 	"time"
 
-	"bendonette/greet/goclient/greetv1"
-	"bendonette/greet/goclient/greetv1/greetv1connect"
+	"bendonnect/greet/goclient/greetv1"
+	"bendonnect/greet/goclient/greetv1/greetv1connect"
 
 	"connectrpc.com/connect"
 )

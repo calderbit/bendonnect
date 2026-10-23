@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Starts the Bendonette test server (examples/test_server.bend, port 8787), waits for the port,
+# Starts the Bendonnect test server (examples/test_server.bend, port 8787), waits for the port,
 # runs the Go interop client against it, kills ONLY the server PID it started, exits with the
 # client's status.  Env: BEND_BIN (default `bend`), SERVER_BIN (a native build; skips the runner),
 # PORT (default 8787; must match the server), WAIT_SECS (default 180).

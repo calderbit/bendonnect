@@ -1,4 +1,4 @@
-// Reference server for bendonette.test.v1.TestService, built on connect-go.
+// Reference server for bendonnect.test.v1.TestService, built on connect-go.
 package main
 
 import (
@@ -15,7 +15,7 @@ import (
 	"google.golang.org/protobuf/types/known/wrapperspb"
 )
 
-const svc = "/bendonette.test.v1.TestService/"
+const svc = "/bendonnect.test.v1.TestService/"
 
 func main() {
 	addr := flag.String("addr", "127.0.0.1:8788", "listen address")

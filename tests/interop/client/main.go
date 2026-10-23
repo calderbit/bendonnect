@@ -1,5 +1,5 @@
 // Conformance-style interop client for a Connect server exposing
-// bendonette.test.v1.TestService.
+// bendonnect.test.v1.TestService.
 package main
 
 import (
@@ -19,7 +19,7 @@ import (
 	"google.golang.org/protobuf/types/known/wrapperspb"
 )
 
-const svc = "/bendonette.test.v1.TestService/"
+const svc = "/bendonnect.test.v1.TestService/"
 
 var (
 	baseURL = flag.String("url", "http://127.0.0.1:8787", "target server base URL")

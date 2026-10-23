@@ -6,7 +6,7 @@ stream and a client stream. `buf generate` produces:
 | file | what |
 |------|------|
 | `greet_pb.bend` | messages, proto binary and proto3 JSON codecs (pure: `bend greet_pb.bend` prints ALL PROOFS CHECK) |
-| `greet_connect.bend` | server handler and client functions on the Bendonette transport |
+| `greet_connect.bend` | server handler and client functions on the Bendonnect transport |
 | `goclient/greetv1/**` | protoc-gen-go and protoc-gen-connect-go output, used by the Go test client |
 
 The whole server is `server.bend`:

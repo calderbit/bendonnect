@@ -1,4 +1,4 @@
-# bendonette.test.v1.TestService for the Go interop harness (tests/interop). Port 8787.
+# bendonnect.test.v1.TestService for the Go interop harness (tests/interop). Port 8787.
 # Messages are google.protobuf.StringValue / UInt32Value, hand-encoded (JSON = bare value,
 # proto = field 1).   Run: bend examples/test_server.bend
 import Base
@@ -11,7 +11,7 @@ import ../src/protocol.bend as P
 import ../src/transport/server.bend as Srv
 
 def svc() -> String:
-  "bendonette.test.v1.TestService/"
+  "bendonnect.test.v1.TestService/"
 
 def ch(c: U32) -> String:
   SCon{Chr{c}, SNil{}}

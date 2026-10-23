@@ -1,4 +1,4 @@
-module bendonette/codegen
+module bendonnect/codegen
 
 go 1.27.2
 

@@ -1,8 +1,9 @@
 # protoc-gen-bend
 
-A protoc / buf plugin that generates Bend 2 code for Bendonette from proto3 files.
+A protoc / buf plugin that generates Bend 2 code for Bendonnect from proto3 files.
 
-    cd cmd/protoc-gen-bend && go build -o bin/protoc-gen-bend .
+    go install github.com/calderbit/bendonnect/cmd/protoc-gen-bend@latest
+    # or, from a checkout: cd cmd/protoc-gen-bend && go build -o bin/protoc-gen-bend .
 
 ```yaml
 # buf.gen.yaml
@@ -11,8 +12,11 @@ plugins:
   - local: path/to/protoc-gen-bend
     out: gen
     opt:
-      - runtime=../..   # path from the output directory to the Bendonette root (required)
+      - runtime=../..   # path from the output directory to the Bendonnect root (required)
 ```
+
+`runtime` may instead name the BendHub package (`runtime=bendonnect@0.1.0.0`, or a `0x<hash>`);
+hub names are written into the imports verbatim, without the relative-path adjustment.
 
 For `greet.proto` it writes `greet_pb.bend` (messages and codecs, pure: `bend greet_pb.bend`
 prints ALL PROOFS CHECK) and, when the file has services, `greet_connect.bend` (server handler,

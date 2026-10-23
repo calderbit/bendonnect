@@ -1,7 +1,7 @@
-# Bendonette
+# Bendonnect
 
 [Connect protocol](https://connectrpc.com/docs/protocol/) for [Bend 2](https://bend-lang.com):
-servers, clients and a `protoc-gen-bend` code generator. A Bendonette service talks to
+servers, clients and a `protoc-gen-bend` code generator. A Bendonnect service talks to
 connect-go, connect-es, connect-swift and the other Connect clients, and to plain `curl`.
 
 - **Unary** (POST and GET), **server streaming** and **client streaming**, over HTTP/1.1
@@ -30,15 +30,19 @@ service GreetService {
 }
 ```
 
-Generate Bend code with buf (`runtime` is the path from the output directory to this repo):
+Install the generator and generate Bend code with buf:
+
+```sh
+go install github.com/calderbit/bendonnect/cmd/protoc-gen-bend@latest
+```
 
 ```yaml
 # buf.gen.yaml
 version: v2
 plugins:
-  - local: path/to/protoc-gen-bend      # cd cmd/protoc-gen-bend && go build -o bin/protoc-gen-bend .
+  - local: protoc-gen-bend
     out: .
-    opt: [runtime=../..]
+    opt: [runtime=../..]   # this repo, relative to the output directory; or a hub name: runtime=bendonnect@0.1.0.0
 ```
 
 This writes `greet_pb.bend` (messages and both codecs) and `greet_connect.bend` (server handler
@@ -126,8 +130,8 @@ proof gate covers the protocol logic, not the network loop.
 
 ```sh
 tests/run_all.sh                       # proof gate + unit tests (incl. a Bend client/server loopback)
-tests/interop/run_server_interop.sh    # connect-go client -> Bendonette server (52 cases)
-tests/interop/run_client_interop.sh    # Bendonette client -> connect-go server
+tests/interop/run_server_interop.sh    # connect-go client -> Bendonnect server (52 cases)
+tests/interop/run_client_interop.sh    # Bendonnect client -> connect-go server
 tests/codegen/run.sh                   # generator: golden vectors vs protobuf-go, greet e2e
 ```
 

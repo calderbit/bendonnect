@@ -1,5 +1,5 @@
 // protoc-gen-bend generates Bend 2 code (messages, proto binary and proto3 JSON codecs,
-// Connect service stubs) for Bendonette. See README.md in this directory.
+// Connect service stubs) for Bendonnect. See README.md in this directory.
 package main
 
 import (
@@ -38,11 +38,11 @@ func run() error {
 			if fd.Options == nil {
 				fd.Options = &descriptorpb.FileOptions{}
 			}
-			fd.Options.GoPackage = proto.String("bendonette/unused/" + path.Dir(fd.GetName()))
+			fd.Options.GoPackage = proto.String("bendonnect/unused/" + path.Dir(fd.GetName()))
 		}
 	}
 	var flags flag.FlagSet
-	runtime := flags.String("runtime", "", "path to the Bendonette root, relative to the output directory (e.g. ../..)")
+	runtime := flags.String("runtime", "", "path to the Bendonnect root, relative to the output directory (e.g. ../..)")
 	gen, err := protogen.Options{ParamFunc: flags.Set}.New(req)
 	if err != nil {
 		return err

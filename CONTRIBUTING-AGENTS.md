@@ -1,6 +1,6 @@
-# Working on Bendonette (notes for agents)
+# Working on Bendonnect (notes for agents)
 
-Bendonette is a ConnectRPC (https://connectrpc.com/docs/protocol/) library for Bend 2.
+Bendonnect is a ConnectRPC (https://connectrpc.com/docs/protocol/) library for Bend 2.
 
 ## Setup
 - `export PATH="$HOME/.bend/bin:$PATH"` (Bend 2.0.38). Read `~/.bend/guide/GUIDE.md` fully before writing Bend.

@@ -121,7 +121,7 @@ const file_greet_proto_rawDesc = "" +
 	"\fGreetService\x12=\n" +
 	"\x05Greet\x12\x16.greet.v1.GreetRequest\x1a\x17.greet.v1.GreetResponse\"\x03\x90\x02\x01\x12@\n" +
 	"\tGreetMany\x12\x16.greet.v1.GreetRequest\x1a\x17.greet.v1.GreetResponse\"\x000\x01\x12?\n" +
-	"\bGreetAll\x12\x16.greet.v1.GreetRequest\x1a\x17.greet.v1.GreetResponse\"\x00(\x01B+Z)bendonette/greet/goclient/greetv1;greetv1b\x06proto3"
+	"\bGreetAll\x12\x16.greet.v1.GreetRequest\x1a\x17.greet.v1.GreetResponse\"\x00(\x01B+Z)bendonnect/greet/goclient/greetv1;greetv1b\x06proto3"
 
 var (
 	file_greet_proto_rawDescOnce sync.Once
