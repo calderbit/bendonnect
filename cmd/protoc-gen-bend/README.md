@@ -2,6 +2,8 @@
 
 A protoc / buf plugin that generates Bend 2 code for Bendonnect from proto3 files.
 
+**Beta:** the generated API may change between 0.x releases.
+
     go install github.com/calderbit/bendonnect/cmd/protoc-gen-bend@latest
     # or, from a checkout: cd cmd/protoc-gen-bend && go build -o bin/protoc-gen-bend .
 

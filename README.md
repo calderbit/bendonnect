@@ -1,8 +1,12 @@
 # Bendonnect
 
+> **Beta.** Bendonnect is young (0.x): the API may change between releases, and it has been tested
+> against connect-go only. Read [Limitations](#limitations-beta) before relying on it, and please
+> report problems at https://github.com/calderbit/bendonnect/issues.
+
 [Connect protocol](https://connectrpc.com/docs/protocol/) for [Bend 2](https://bend-lang.com):
-servers, clients and a `protoc-gen-bend` code generator. A Bendonnect service talks to
-connect-go, connect-es, connect-swift and the other Connect clients, and to plain `curl`.
+servers, clients and a `protoc-gen-bend` code generator. A Bendonnect service speaks
+standard Connect, so connect-go (tested), the other Connect clients and plain `curl` can call it.
 
 - **Unary** (POST and GET), **server streaming** and **client streaming**, over HTTP/1.1
 - **JSON and binary Protobuf** codecs, with the canonical proto3 JSON mapping
@@ -137,7 +141,7 @@ tests/codegen/run.sh                   # generator: golden vectors vs protobuf-g
 
 The interop and codegen tests need Go and buf.
 
-## Limitations (v1)
+## Limitations (beta)
 
 - **No bidirectional streaming.** It needs HTTP/2, and there is no HTTP/2 server for Bend yet.
   Generated servers answer bidi methods with `unimplemented`.

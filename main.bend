@@ -1,5 +1,8 @@
 # Bendonnect: the Connect RPC protocol (https://connectrpc.com/docs/protocol/) for Bend 2.
 #
+# BETA (0.x): the API may change between releases and only connect-go interop is tested.
+# Source, docs and issues: https://github.com/calderbit/bendonnect
+#
 # This entry file pulls in every public module so `--publish` ships them all.
 # Import the module you need by path, for example:
 #   import bendonnect@0.1.0.0/src/transport/server.bend as Srv
