@@ -5,8 +5,8 @@
 #
 # This entry file pulls in every public module so `--publish` ships them all.
 # Import the module you need by path, for example:
-#   import bendonnect@0.1.0.0/src/transport/server.bend as Srv
-# Generated code (protoc-gen-bend, option runtime=bendonnect@0.1.0.0) imports these paths too.
+#   import bendonnect-rpc@0.1.0.0/src/transport/server.bend as Srv
+# Generated code (protoc-gen-bend, option runtime=bendonnect-rpc@0.1.0.0) imports these paths too.
 # Guide: README.md. Module contracts: src/README-api.md, src/README-codegen.md.
 import Base
 import ./src/code.bend as Code

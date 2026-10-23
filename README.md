@@ -15,6 +15,8 @@ standard Connect, so connect-go (tested), the other Connect clients and plain `c
   the compiler checks on every build (see [Laws](#laws))
 - Tested against **connect-go** in both directions
 
+On BendHub as `bendonnect-rpc`: `import bendonnect-rpc@0.1.0.0/src/transport/server.bend as Srv`.
+
 ## Quick start
 
 ```proto
@@ -46,7 +48,7 @@ version: v2
 plugins:
   - local: protoc-gen-bend
     out: .
-    opt: [runtime=../..]   # this repo, relative to the output directory; or a hub name: runtime=bendonnect@0.1.0.0
+    opt: [runtime=../..]   # this repo, relative to the output directory; or a hub name: runtime=bendonnect-rpc@0.1.0.0
 ```
 
 This writes `greet_pb.bend` (messages and both codecs) and `greet_connect.bend` (server handler

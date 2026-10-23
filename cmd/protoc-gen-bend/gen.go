@@ -112,7 +112,7 @@ func generate(gen *protogen.Plugin, file *protogen.File, runtimeOpt string) erro
 		return err
 	}
 	if runtimeOpt == "" {
-		return fmt.Errorf("plugin option runtime=<path to the Bendonnect root relative to the output directory, or a hub name like bendonnect@0.1.0.0> is required (e.g. runtime=../..)")
+		return fmt.Errorf("plugin option runtime=<path to the Bendonnect root relative to the output directory, or a hub name like bendonnect-rpc@0.1.0.0> is required (e.g. runtime=../..)")
 	}
 	base := strings.TrimSuffix(file.Desc.Path(), ".proto")
 	rt := runtimeOpt
@@ -328,7 +328,7 @@ func bendFile(base, kind string) string {
 	return dir + b.String() + "_" + kind + ".bend"
 }
 
-// isHubRef reports whether the runtime option names a BendHub package (bendonnect@0.1.0.0 or
+// isHubRef reports whether the runtime option names a BendHub package (bendonnect-rpc@0.1.0.0 or
 // 0x<hash>) rather than a local directory; hub imports are used verbatim.
 func isHubRef(rt string) bool {
 	first := strings.SplitN(rt, "/", 2)[0]

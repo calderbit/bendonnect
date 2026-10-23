@@ -17,7 +17,7 @@ plugins:
       - runtime=../..   # path from the output directory to the Bendonnect root (required)
 ```
 
-`runtime` may instead name the BendHub package (`runtime=bendonnect@0.1.0.0`, or a `0x<hash>`);
+`runtime` may instead name the BendHub package (`runtime=bendonnect-rpc@0.1.0.0`, or a `0x<hash>`);
 hub names are written into the imports verbatim, without the relative-path adjustment.
 
 For `greet.proto` it writes `greet_pb.bend` (messages and codecs, pure: `bend greet_pb.bend`
